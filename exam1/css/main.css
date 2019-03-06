@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fffdf7;
+}
+
+.con {
+    width: 920px;
+    margin: 0 auto;
+    background: #fffde7;
+    padding: 40px;
+}
+
+.about-left {
+    width: 35%;
+    float: left;
+    text-align: center;
+}
+
+.about-left>img {
+    margin: 0px 0px 50px 0;
+    border: 20px solid #fff9c4;
+}
+
+.info {
+    padding: 0 0 0 40px;
+    max-width: 100%;
+    font-size: 18px;
+}
+
+.infoc {
+    padding: 0 0 5px 40px;
+    text-align: left;
+    font-size: 30px;
+}
+
+th {
+    text-align: left;
+    width: 80px;
+}
+
+td {
+    text-align: left;
+}
+
+.about-right {
+    margin-left: 40%;
+    padding-right: 40px;
+}
+
+.about-me {
+    background: #fff9c4;
+    padding: 2.5em 3em;
+    box-shadow: -3px 7px 39px -5px rgba(0, 0, 0, 0.38);
+    margin: 0 0 2em 0;
+}
+
+.about-me>h2 {
+    font-size: 40px;
+    padding: 0;
+    margin: 10px 0px;
+}
+
+.about-me>h4 {
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.pic-flow {
+    width: 100%;
+    text-align: justify;
+}
+
+.pic {
+    height: 200px;
+    margin: 10px 0;
+    box-shadow: -2px 7px 39px -5px rgba(0, 0, 0, 0.38);
+}
+.des{
+    padding: 1em;
+    margin: 0;
+    border: 2px solid #fff9c4;
+    background: #fffdf7;
+    box-shadow: -2px 7px 39px -5px rgba(0, 0, 0, 0.38);
+}
+.pic:hover{
+    cursor: pointer;
+}

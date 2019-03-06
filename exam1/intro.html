@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的家乡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="intor.css" />
+    <script src="main.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .con {
+            width: 1020px;
+            margin: auto;
+        }
+
+        .head {
+            position: relative;
+            width: 1020px;
+            height: 540px;
+            background: url(images/head.jpg);
+        }
+
+        /* .introheader{
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            left: 100px;
+            bottom: 270px;
+            margin: 0;
+        } */
+        .header {
+            position: absolute;
+            color: white;
+            font-size: 80px;
+            left: 100px;
+            bottom: 150px;
+            margin: 0;
+        }
+
+        .subheader {
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            left: 101px;
+            bottom: 100px;
+            margin: 0;
+        }
+
+        .odd,
+        .even {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 350px;
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+            height: 350px;
+        }
+
+        .right {
+            margin-left: 50%;
+            width: 50%;
+            height: 350px;
+        }
+
+        /* .odd> .left{
+            width:50%;
+            float: left;
+            height: 350px;
+        }
+        .odd> .right{
+            margin-left: 50%;
+            width: 50%;
+        }
+        .even> .left{
+            width: 50%;
+            float: left;
+        }
+        .even> .right{
+            margin-left: 50%;
+            height: 350px;
+            width: 50%;
+        } */
+        .content {
+            padding: 0px 15px;
+        }
+
+        .odd .title {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .even .title {
+            margin: 0;
+            font-size: 40px;
+            text-align: right;
+        }
+
+        .ptext {
+            margin: 8px 0;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        .even li {
+            list-style: none;
+            text-align: right;
+        }
+
+        .name {
+            font-size: 20px;
+            margin: 0.6em 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="head">
+            <!-- <p class="introheader">我的故乡</p> -->
+            <p class="header">绍兴</p>
+            <p class="subheader">镜湖水如月,耶溪女如月</p>
+        </div>
+        <div class="odd">
+            <div class="left" style="background:url(images/sx01.jpg)">
+            </div>
+            <div class="right">
+                <div class="content">
+                    <p class="title">历史悠久</p>
+                    <p class="ptext">绍兴已经有超过六千五百年的历史，是中国最古老的城市之一。春秋为越国都城，是吴越文化的发祥地之一。</p>
+                    <p class="ptext">秦初为会稽郡的属地，秦王政二十五年，以故越地置会稽郡，郡治吴县。秦始皇三十七年东巡至会稽南部属地，更名大越曰山阴，东汉时期，会稽郡分治，钱塘江以东地区均为会稽郡，治山阴。东晋南朝为东扬州，治山阴，隋唐置越州总管府，唐末置浙江东道节度使，辖越、睦、衢、婺、台、明、括、温八州。</p>
+                    <p class="ptext">五代时期至北宋，绍兴属于两浙十三州的两浙东路，为两浙东路首府，治理范围大约为浙江省钱塘江以南的地区。南宋绍兴年间改越州为绍兴，取“绍祚中兴”之义，后升绍兴府，是两浙东路首府和南宋陪都。</p>
+                </div>
+            </div>
+        </div>
+        <div class="even">
+            <div class="left">
+                <div class="content">
+                    <p class="title">名人辈出</p>
+                    <ul>
+                        <li class="name">蔡元培</li>
+                        <li class="des">字鹤卿，民主进步人士，国民党中央执委、国民政府委员兼监察院院长。中华民国首任教育总长。</li>
+                        <li class="name">鲁迅</li>
+                        <li class="des">原名周树人，字豫山，中国现代伟大的文学家、思想家、革命家、翻译家及新文学运动的奠基人。他从文的30年间，共有“述著29种，250余万言”，为我们留下了珍贵的文化遗产。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right" style="background:url(images/sx02.jpg);background-size: 105%"></div>
+        </div>
+        <div class="odd">
+            <div class="left" style="background:url(images/sx03.jpg)">
+            </div>
+            <div class="right">
+                <div class="content">
+                    <p class="title">绍兴酒</p>
+                    <p class="ptext" style="line-height:2.0">绍兴酒，浙江省绍兴市特产，中国国家地理标志产品。 绍兴酒，又称绍兴黄酒、绍兴老酒，随着时间的久远而更为浓烈，所以绍兴酒称老酒，越陈越香。 绍兴酒是绍兴的著名特产，生产历史非常悠久。据文献记载，春秋战国时期绍兴酿酒业已很普遍。《吕氏春秋》载有越王勾践“投醪劳师”的故事，至今城内尚有“投醪河”遗址。到南北朝时，绍兴老酒已成为贡品。在全国众多的酒类中，绍兴老酒是获奖次数最多的品种之一。 2015年09月25日，习近平主席访问美国期间，白宫国宴菜单用酒就是绍兴黄酒。</p>
+                </div>
+            </div>
+        </div>
+        <div class="even">
+            <div class="left">
+                <div class="content">
+                    <p class="title">绍兴三乌</p>
+                    <ul>
+                        <li class="name">乌干菜</li>
+                        <li class="des">乌干菜又叫霉干菜，因其色黑故称乌干菜。</li>
+                        <li class="name">乌篷船</li>
+                        <li class="des">该帽因色黑、顶圆、有卷边而得名。</li>
+                        <li class="name">乌毡帽</li>
+                        <li class="des">这种木船船体矫小，船篷用竹编成，中间夹着竹箬，呈半圆形，并用烟煤和桐油漆成黑色，船由此而得名。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right" style="background:url(images/sx04.png)"></div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
