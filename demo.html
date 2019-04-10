@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .bd-callout {
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #eee;
+            border-left-width: .25rem;
+            border-radius: .25rem;
+        }
+
+        .bd-callout-success {
+            border-left-color: var(--success);
+        }
+
+        .bd-callout-danger {
+            border-left-color: var(--danger);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="col-sm-8 col-md-6 col-xl-4 mx-auto">
+            <div class="form-group">
+                <label for="id">学号</label>
+                <input type="text" class="form-control" id="id" placeholder="请输入学号">
+            </div>
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" class="form-control" id="name" placeholder="请输入姓名">
+            </div>
+            <div class="form-group">
+                <label for="expno">测验序号</label>
+                <select if="expno" class="custom-select">
+                    <option value="1">测验 1</option>
+                    <option value="2">测验 2</option>
+                    <option value="3" selected>测验 3</option>
+                </select>
+            </div>
+            <small id="submitHelp" class="form-text text-muted">填写正确的学号姓名查询成绩与排名</small>
+            <button type="submit" class="btn btn-primary mt-3" aria-describedby="submitHelp"
+                onclick="query()">Submit</button>
+            <div id="result" class="bd-callout bd-callout-danger sr-only">
+                <h4 class="text-danger"></h4>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script>
+        const request = new XMLHttpRequest();
+        const result = document.querySelector('#result');
+        const title = result.querySelector('h4');
+        const con = result.querySelector('p');
+        const id = document.querySelector('#id');
+        const name = document.querySelector("#name");
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                const res = JSON.parse(request.responseText);
+                if (res.msg == "Error") {
+                    result.className = "bd-callout bd-callout-danger";
+                    title.className = "text-danger";
+                    title.innerText = "查询失败";
+                    con.innerText = "请检查学号姓名是否正确";
+                } else {
+                    result.className = "bd-callout bd-callout-success";
+                    title.className = "text-success";
+                    title.innerText = "查询成功";
+                    con.innerText = `成绩：${res.grade} 排名：${res.rank}`;
+                }
+
+
+            }
+        }
+
+        function query() {
+            request.open('POST', 'https://api.ahbicj.xyz/results.php');
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(`name=${name.value}&id=${id.value}`);
+        }
+    </script>
+</body>
+
+</html>
